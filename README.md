@@ -2,7 +2,7 @@
 
 A comprehensive demonstration of advanced end-to-end (E2E) testing capabilities using Playwright. This repository serves as a portfolio piece illustrating modern QA engineering practices, resilient automation strategies, and continuous integration.
 
-Check out the fully interactive Playwright HTML Test Report generated automatically via GitHub Actions: `https://<your-username>.github.io/<repo-name>/` (make sure to replace this URL after deploying and enabling GitHub Pages from the branch `gh-pages` inside your settings).
+Check out the fully interactive Playwright HTML Test Report generated automatically via GitHub Actions: [View Live Test Report](https://akashrane.github.io/Playwright_Demo/)
 
 ## Highlights
 
@@ -20,8 +20,8 @@ This project utilizes the `todomvc.com/examples/react` application as a testing 
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/akashrane/Playwright_Demo.git
+cd Playwright_Demo
 ```
 
 ### 2. Install dependencies:
