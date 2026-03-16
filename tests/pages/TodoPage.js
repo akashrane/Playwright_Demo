@@ -12,7 +12,7 @@ class TodoPage {
     this.todoInput = page.getByTestId('text-input');
     this.todoList = page.getByTestId('todo-list');
     this.todoItems = this.todoList.locator('li');
-    this.todoCount = page.getByTestId('todo-count');
+    this.todoCount = page.locator('.todo-count');
     this.clearCompletedButton = page.getByRole('button', { name: 'Clear completed' });
     this.toggleAllCheckbox = page.getByTestId('toggle-all');
     
@@ -38,7 +38,7 @@ class TodoPage {
   }
 
   async toggleTodo(title) {
-    await this.todoItems.filter({ hasText: title }).getByTestId('todo-item-toggle').check();
+    await this.todoItems.filter({ hasText: title }).getByTestId('todo-item-toggle').click();
   }
 
   async uncheckTodo(title) {

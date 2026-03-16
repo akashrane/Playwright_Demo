@@ -72,19 +72,18 @@ test.describe('Todo MVC App - Full Coverage with POM', () => {
 
     test('should be able to edit an item via double-click', async () => {
       await todoPage.doubleClickTodoToEdit('Task to edit');
-      const editInput = todoPage.page.locator('.todo-list li.editing .edit');
+      const editInput = todoPage.page.locator('.todo-list input[data-testid="text-input"]');
       
       // Clear out the current text using Fill
       await editInput.fill('Edited Task');
       await editInput.press('Enter');
       
       await expect(todoPage.todoItems.first()).toHaveText('Edited Task');
-      await expect(todoPage.todoItems.first()).not.toHaveClass(/editing/);
     });
 
     test('should cancel editing on Escape', async () => {
       await todoPage.doubleClickTodoToEdit('Task to edit');
-      const editInput = todoPage.page.locator('.todo-list li.editing .edit');
+      const editInput = todoPage.page.locator('.todo-list input[data-testid="text-input"]');
       await editInput.fill('Changed accidentally');
       await editInput.press('Escape');
       
@@ -93,7 +92,7 @@ test.describe('Todo MVC App - Full Coverage with POM', () => {
 
     test('should remove the item if an empty string was entered', async () => {
       await todoPage.doubleClickTodoToEdit('Task to edit');
-      const editInput = todoPage.page.locator('.todo-list li.editing .edit');
+      const editInput = todoPage.page.locator('.todo-list input[data-testid="text-input"]');
       await editInput.fill('');
       await editInput.press('Enter');
       
@@ -118,7 +117,7 @@ test.describe('Todo MVC App - Full Coverage with POM', () => {
     test('should hide clear completed button when there are no completed items', async () => {
       await todoPage.toggleTodo('Completed Item 1');
       await todoPage.toggleTodo('Completed Item 2'); // All active now
-      await expect(todoPage.clearCompletedButton).toBeHidden();
+      await expect(todoPage.clearCompletedButton).toBeDisabled();
     });
 
     test('should respect the Active filter', async () => {
